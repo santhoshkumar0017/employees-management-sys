@@ -10,24 +10,19 @@ function App() {
 
   return (
     <> 
-    <BrowserRouter>
-       <HeaderComponent/>
+   <BrowserRouter basename="/employees-management-sys">
+  <HeaderComponent/>
 
-       <Routes>
-         
-       <Route path='/' element={<ListofEmployees/>}></Route>
+  <Routes>
+    <Route path="/" element={<ListofEmployees/>} />
+    <Route path="/employees" element={<ListofEmployees/>} />
+    <Route path="/add-employee" element={<EmployeeComponent/>} />
+    <Route path="/update-employees/:id" element={<EmployeeComponent/>} />
+  </Routes>
 
-       <Route path='/employees' element={<ListofEmployees/>}></Route>
+  <FooterComponent/>
+</BrowserRouter>
 
-       <Route path='/add-employee' element={<EmployeeComponent/>}></Route>
-
-       <Route path='/update-employees/:id' element={<EmployeeComponent/>}></Route>
-
-       </Routes>
-
-       <FooterComponent/>
-       
-    </BrowserRouter>
     
     </>
   )
